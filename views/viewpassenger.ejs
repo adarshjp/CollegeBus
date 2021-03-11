@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
+            College Bus</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a role="button" href="/logout" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+    <p><%= passenger[0].routeno%></p>
+<%- include("partials/footer") %>

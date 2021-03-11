@@ -1,0 +1,5 @@
+.env
+node_modules
+Not required
+home.png
+package-lock.json

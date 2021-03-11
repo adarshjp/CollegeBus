@@ -1,0 +1,47 @@
+<%- include("partials/header") %>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
+            College Bus</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a role="button" href="/logout" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+    <!-- <form action="/newBoardingpoint" method="POST">
+        <input type="text" name="bt[routeno]" id="" placeholder="Routno">
+        <input type="text" name="bt[boardingpt]" id="" placeholder="Boarding pt">
+        <input type="text" name="bt[price]" id="" placeholder="Price">
+        <input type="submit">
+    </form> -->
+    <div style="width: 80%;margin:150px auto;" class="card " >
+    
+        <form method="POST" action="/newBoardingpoint" class="p-5 shadow-lg ">
+            <p class="text-center h4 p-2">Add a new boarding point</p>
+            <div class="form-group">
+                <input type="text" name="bt[routeno]" value="" placeholder="Route Number" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="bt[boardingpt]" value="" placeholder="Boarding point" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="bt[price]" value="" placeholder="Price" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="form-control btn btn-lg rounded-pill bg-dark text-white">
+            </div>
+            
+            
+            
+            
+        </form>
+    </div> 
+    <div class="text-center ">
+        <a href="/admin" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+    </div>
+<%- include("partials/footer") %>

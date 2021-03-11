@@ -1,0 +1,78 @@
+<%- include("partials/header") %>
+ <style>
+    /*.card{
+    height: 300px;
+  }
+  .card-header img{
+    height: 200px;*/
+    /*.card-group{
+        float: none;
+    }*/
+.card-img-top{
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+</style>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
+            College Bus</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a role="button" href="/logout" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+<div class="container pt-5">
+    <div class="row row-content align-items-center">
+        <div class="card-group">
+            <div class="col-sm-6 col-md-4 pt-3">
+                <div class="card shadow-lg p-1">
+                        <div class="card-img-top ">
+                            <img class=" img-responsive" src="https://www.ivws.org/wp-content/uploads/2020/03/School-buses-with-CCTV-and-GPS-system.jpg" alt="BUS" height="100%" width="100%">
+                        </div>
+                        <div class="card-body  text-center p-1">
+                            <div class="card-title">
+                                <a role="button" href="/newBus" class=" btn btn-outline-success"><span class="fa fa-plus-circle" style="color:#080807;font-size: x-large;font: bold;"></span><span style="color:#080807;font-size: x-large;font: bold;">Add new Bus</span></a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 pt-3">
+                <div class="card shadow-lg p-1" >
+                        <div class="card-img-top ">
+                            <img class=" img-responsive" src="https://t4.ftcdn.net/jpg/01/66/40/31/360_F_166403126_t0xbg4CbqN5t2M5P6mDWNnUEwIot8eKs.jpg" alt="BUS" height="100%" width="100%">
+                        </div>
+                        <div class="card-body  text-center p-1">
+                            <div class="card-title">
+                                <a role="button" href="/newBoardingpoint" class="btn btn-outline-success"><span class="fa fa-plus-circle" style="color:#080807;font-size: x-large;font: bold;"></span><span style="color:#080807;font-size: x-large;font: bold;">Add new Boarding point</span></a>
+                            </div>
+                        </div>
+                </div>
+            </div> 
+            <div class="col-sm-6 offset-sm-3 col-md-4 offset-md-0 pt-3">
+                <div class="card shadow-lg p-1" >
+                        <div class="card-img-top">
+                            <img class=" img-responsive" src="https://images.squarespace-cdn.com/content/v1/585d2dd6f5e2319c203c74a4/1483107155808-5SHQTUNJ9YH1XQCBWEBT/ke17ZwdGBToddI8pDm48kGfQm8FrqscyyCkWoWeMTktZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI-Cyh6FfZb6tRAHf5Evp_6j5JMMRBwIHm7vq2bjgvIwkKMshLAGzx4R3EDFOm1kBS/image-asset.jpeg" alt="BUS" height="100%" width="100%">
+                        </div>
+                        <div class="card-body text-center p-1">
+                            <div class="card-title">
+                                <a role="button" href="/view" class="btn btn-outline-success"><span class="fa fa-eye" style="color:#080807;font-size: x-large;font: bold;"></span><span style="color:#080807;font-size: x-large;font: bold;">View Details</span></a>
+                        
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="text-center p-5">
+    <a href="/" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+  </div>
+<%- include("partials/footer") %>

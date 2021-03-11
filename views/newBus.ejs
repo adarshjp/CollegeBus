@@ -1,0 +1,45 @@
+<%- include("partials/header") %>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
+            College Bus</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a role="button" href="/logout" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Logout</a>
+            </span>
+        </div>
+    </div>
+</nav>
+<div style="width: 80%;margin:150px auto;" class="card " >
+    
+    <form method="POST" action="/newBus" class="p-5 shadow-lg " name="newBus" id="newBus"> 
+        <p class="text-center h4 p-2">Add a new bus</p>
+        <div class="form-group">
+            <input type="text" name="bus[regno]" value="" placeholder="REG NO" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="bus[routeno]" value="" placeholder="ROUTE NO" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="bus[totalseats]" value="" placeholder="Total no of seats" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="form-control btn btn-lg rounded-pill bg-dark text-white" onclick="" value="ADD">
+        </div>
+    </form>
+</div> 
+<div class="text-center ">
+    <a href="/admin" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+</div>
+
+<%- include("partials/footer") %>
+<script type="text/javascript">
+    var busform=document.getElementsByName('newBus')
+    function submitform(){
+        busform.submit()
+    }
+    console.log("Submit")
+</script>

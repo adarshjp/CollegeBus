@@ -1,0 +1,51 @@
+<%- include("partials/header") %>
+<style>
+    body{
+        padding-top: 100px;
+    }
+    input{
+        border: 0;
+    }
+</style>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
+            College Bus</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a role="button" href="/login" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Login</a>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<div class="card shadow-lg  p-5" style="width: 35rem;margin: 0 auto;border: 1px solid red;">
+    <form action="payment" method="post">
+        Full name :<input type="text" name="pass[name]" value=" <%= passenger.name %>"><br>
+        ID : <input type="text" name="pass[id]" value=" <%= passenger.id %>"><br>
+        Email : <input type="email" name="pass[email]" value=" <%= passenger.email %>" width="200px"><br>
+        Phone number : <input type="text" name="pass[phno]" value=" <%= passenger.phno %>"><br>
+        Boarding point : <input type="text" name="pass[boardingpt]" value=" <%= passenger.boardingpt %>" readonly><br>
+        Route number : <input type="text" name="pass[routeno]" value="<%=passenger.routeno%>" readonly><br>
+        Type : <input type="text" name="pass[type]" value=" <%= passenger.type %>" readonly><br>
+        Price : <input type="text" name="pass[price]" value=" <%= passenger.price %>" readonly><br>
+        <script
+            src="https://checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="<%= key%>" 
+            data-amount="amount" 
+            data-currency="inr" 
+            data-name="Bus pass" 
+            data-description="" 
+            data-locale="auto"
+            data-label="Pay" > 
+        </script> 
+    </form>
+</div>
+<div class="text-center p-5">
+    <a href="/" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+  </div>
+<%- include("partials/footer") %>

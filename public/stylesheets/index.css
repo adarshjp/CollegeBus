@@ -1,0 +1,65 @@
+html { 
+  font-size: calc(0.3em + 1vw); 
+}
+#bus{
+    color: blue;
+  }
+body{
+    background-color: white;
+    padding: 50px 0px 0px 0px;
+    z-index: 0;;
+    
+  }
+  .row-content {
+    margin: 0px auto;
+    padding: 50px 0px;
+    min-height: 400px; 
+  }
+  
+  .navbar-dark {
+    background-color:#ffff00 }
+  
+  .custom-toggler.navbar-toggler { 
+      border-color: black; 
+      width: 15%;
+    } 
+  
+  .custom-toggler .navbar-toggler-icon { 
+      background-image: url( "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+  } 
+  
+ /* .carousel {
+    background:#ffff00; 
+}
+    /*.carousel .carousel-item {
+      height: 500px; 
+    }*/
+      /*.carousel .carousel-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 300px !important;
+        width: 100%;
+      }
+  
+  #carouselButton {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1; }*/
+    .carousel-item img {
+      height: 550px !important;
+     
+  }
+  footer{
+    background-color:black;
+    color: white;
+
+  }
+  /*.card{
+    height: 300px;
+  }*/
+  /*.card-header img{
+    height: 200px;
+  }*/
+  select:focus { outline-style: none; }
