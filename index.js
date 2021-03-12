@@ -23,7 +23,7 @@ var Publishable_Key = process.env.Publishable_Key
 var Secret_Key = process.env.Secret_Key
 
 const stripe = require('stripe')(Secret_Key)
-mongoose.connect(process.env.DB_URL,connectionParams)
+mongoose.connect(process.env.DB_URL2,connectionParams)
 .then( ()=>{
     console.log("Connected")
 })
