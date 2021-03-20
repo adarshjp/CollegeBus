@@ -1,6 +1,6 @@
 # College Bus Management System
 
-This project is built to give an online touch for the college bus pass registration which is follwed in our college.
+This project is built to give an online touch for the college bus pass regsistration which is follwed in our college.
 
 Passengers(students/staff) can register for bus pass by paying the respective fee for their boarding point.After registration they will recevie an email notification.
 
