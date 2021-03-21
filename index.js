@@ -23,7 +23,7 @@ var Publishable_Key = process.env.Publishable_Key
 var Secret_Key = process.env.Secret_Key
 
 const stripe = require('stripe')(Secret_Key)
-mongoose.connect(process.env.DB_URL,connectionParams)
+mongoose.connect(process.env.DB_URL2,connectionParams)
 .then( ()=>{
     console.log("Connected")
 })
@@ -126,9 +126,19 @@ app.use(function(req,res,next){
 	next();
 });
 app.get("/",(req,res)=>{
+
     res.render("home")
 })
-
+app.get("/fee",(req,res)=>{
+    Boardingpt.find().sort({routeno:1}).then((bt)=>{
+        //console.log(bt)
+        res.render("fee",{bt:bt})
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+    
+})
 app.get("/newPassenger",(req,res)=>{  
   
     Bus.find({},{routeno:1,_id:0},(err,routeno)=>{
