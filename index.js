@@ -27,6 +27,13 @@ mongoose
   });
 //MONGODB CONNECTION COMPLETED
 
+const flash=require('connect-flash')
+const cookieParser=require('cookie-parser')
+const session=require('express-session')
+app.use(cookieParser('keyboard cat'))
+app.use(session({cookie:{maxAge:60000}}))
+app.use(flash())
+
 const Admin = require("./models/admin");
 app.use(
   require("express-session")({
@@ -42,6 +49,7 @@ passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
+  res.locals.message=req.flash()
   next();
 });
 
