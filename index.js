@@ -50,12 +50,12 @@ const passengerRouter = require("./routes/passenger");
 const busRouter = require("./routes/bus");
 const boardingpointRouter = require("./routes/boardingpoint");
 const adminRoutes = require("./routes/admin");
-const authRoutes=require('./routes/auth')
+const authRoutes = require("./routes/auth");
 app.use(passengerRouter);
 app.use(busRouter);
 app.use(boardingpointRouter);
 app.use(adminRoutes);
-app.use(authRoutes)
+app.use(authRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

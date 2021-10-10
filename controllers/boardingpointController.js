@@ -1,10 +1,10 @@
-const Boardingpt=require('../models/boardingpt')
-exports.newBoardingpoint_get=(req,res)=>{
-    res.render("newBoardingpoint");
-}
+const Boardingpt = require("../models/boardingpt");
+exports.newBoardingpoint_get = (req, res) => {
+  res.render("newBoardingpoint");
+};
 
-exports.newBoardingpoint_post=(req,res)=>{
-    var bt = req.body.bt;
+exports.newBoardingpoint_post = (req, res) => {
+  var bt = req.body.bt;
   console.log(bt);
   Boardingpt.create(bt, (err, newbt) => {
     if (err) console.log(err);
@@ -14,4 +14,4 @@ exports.newBoardingpoint_post=(req,res)=>{
       res.redirect("/newBoardingpoint");
     }
   });
-}
+};

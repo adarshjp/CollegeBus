@@ -1,47 +1,88 @@
 <%- include("partials/header") %>
 <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
   <div class="container">
-      <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
-          College Bus</a>
-      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="Navbar">
-          <span class="navbar-nav ml-auto">
-              <a role="button" href="/login" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Login</a>
-          </span>
-      </div>
+    <a
+      class="navbar-brand mr-auto h5"
+      href="/"
+      style="
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      "
+      ><i class="fa fa-bus" aria-hidden="true"></i> College Bus</a
+    >
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#Navbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navbar">
+      <span class="navbar-nav ml-auto">
+        <a
+          role="button"
+          href="/login"
+          style="
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+          "
+          class="h5"
+          ><span class="fa fa-sign-out"></span>Login</a
+        >
+      </span>
+    </div>
   </div>
 </nav>
 <div class="container pt-5">
-    <div style="margin:25px auto; width: 90%;" class="pt-5 w-50">
-      <form action="/login" method="POST" class="p-5 shadow-lg">
-        <div class="row">
-          <div class="col-md-6 col-sm-12 p-2">
-              <img src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg" alt="" width="100%" height="100%" class="img-responsive rounded-circle">
-          </div>
-          <div class="col-md-6 col-sm-12 p-2 mt-5">
-            
-              <div class="form-group">
-                <input type="text" name="username" placeholder="Username" class="form-control rounded-pill" required>
-              </div>
-              <div class="form-group">
-                <input type="password" name="password" placeholder="Password" class="form-control rounded-pill" required>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Login" class="form-control rounded-pill bg-dark text-white mt-1">
-              </div>
-           
-            
-          </div>    
+  <div style="margin: 25px auto; width: 90%" class="pt-5 w-50">
+    <form action="/login" method="POST" class="p-5 shadow-lg">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 p-2">
+          <img
+            src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg"
+            alt=""
+            width="100%"
+            height="100%"
+            class="img-responsive rounded-circle"
+          />
         </div>
-      </form>
-    </div>
-    
+        <div class="col-md-6 col-sm-12 p-2 mt-5">
+          <div class="form-group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              class="form-control rounded-pill"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="form-control rounded-pill"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="submit"
+              value="Login"
+              class="form-control rounded-pill bg-dark text-white mt-1"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <div class="text-center p-5">
-  <a href="/" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+  <a href="/" class="btn btn-lg rounded-pill btn-primary"
+    >Home <i class="fa fa-home" aria-hidden="true"></i
+  ></a>
 </div>
 
-
-<%- include("partials/footer") %> 
+<%- include("partials/footer") %>

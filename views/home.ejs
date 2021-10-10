@@ -1,141 +1,226 @@
 <%- include("partials/header") %>
 <style>
-   /* .card{
+  /* .card{
     height: 300px;
   }
   .card-header img{
     height: 200px;
   }*/
-  body{
-      padding: 0;
+  body {
+    padding: 0;
   }
-  .card-img-top{
+  .card-img-top {
     width: 100%;
     height: 20vw;
     object-fit: cover;
-}
+  }
 </style>
 <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-    <div class="container">
-        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
-            College Bus</a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="Navbar">
-            <span class="navbar-nav ml-auto">
-                <a role="button" href="/login" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Login</a>
-            </span>
-        </div>
+  <div class="container">
+    <a
+      class="navbar-brand mr-auto h5"
+      href="/"
+      style="
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      "
+      ><i class="fa fa-bus" aria-hidden="true"></i> College Bus</a
+    >
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#Navbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navbar">
+      <span class="navbar-nav ml-auto">
+        <a
+          role="button"
+          href="/login"
+          style="
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+          "
+          class="h5"
+          ><span class="fa fa-sign-out"></span>Login</a
+        >
+      </span>
     </div>
+  </div>
 </nav>
-    <div class=" ">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-                    <div class="carousel-inner" role="listbox" style=" width:100%; height: 500px !important;">
-                        <div class="carousel-item active">
-                            <img class="img-responsive" src="https://www.ladydoakcollege.edu.in/images/Alumnae_bus/DSC_0069.jpg" alt="BUS" width="100%" >
-                           
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-responsive" src="https://www.jnncollege.edu.in/wp-content/uploads/2019/04/Transportation.jpg" alt="BUS" width="100%" >
-        
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-responsive" src="https://www.iacecollege.com/web/extra-images/f4.jpg" alt="BUS" width="100%" >
-                        </div>
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel" data-slide-to="1"></li>
-                        <li data-target="#mycarousel" data-slide-to="2"></li>
-                    </ol>
-                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
+<div class="">
+  <div
+    id="mycarousel"
+    class="carousel slide"
+    data-ride="carousel"
+    data-interval="5000"
+  >
+    <div
+      class="carousel-inner"
+      role="listbox"
+      style="width: 100%; height: 500px !important"
+    >
+      <div class="carousel-item active">
+        <img
+          class="img-responsive"
+          src="https://www.ladydoakcollege.edu.in/images/Alumnae_bus/DSC_0069.jpg"
+          alt="BUS"
+          width="100%"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="img-responsive"
+          src="https://www.jnncollege.edu.in/wp-content/uploads/2019/04/Transportation.jpg"
+          alt="BUS"
+          width="100%"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="img-responsive"
+          src="https://www.iacecollege.com/web/extra-images/f4.jpg"
+          alt="BUS"
+          width="100%"
+        />
+      </div>
     </div>
-    
-    <div class="container">
-        <div class="row row-content align-items-center">
-            <div class="card-group">
-                <div class="col-12 col-sm-6 col-md-4 pb-5">
-                    <div class="card shadow-lg ">
-                            <div class="card-img-top">
-                                <img class="img-responsive" src="https://www.ivws.org/wp-content/uploads/2020/03/School-buses-with-CCTV-and-GPS-system.jpg" alt="BUS" width="100%" height="100%">
-                            </div>
-                            <div class="card-body p-1 text-center">
-                                    <h4 class="card-title" style="color:#080807" id="bus">30+ Buses</h4>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 pb-5">
-                    <div class="card shadow-lg ">
-                            <div class="card-img-top">
-                                <img class="img-responsive" src="https://t4.ftcdn.net/jpg/01/66/40/31/360_F_166403126_t0xbg4CbqN5t2M5P6mDWNnUEwIot8eKs.jpg" alt="BUS" width="100%" height="100%">
-                            </div>
-                            <div class="card-body p-1 text-center">
-                                    <h4 class="card-title" style="color:#080807">100+ Routes</h4>
-                            </div>
-                    </div>
-                </div>  
-                <div class="col-12 col-sm-6 offset-sm-3 col-md-4 offset-md-0 pb-5">
-                    <div class="card shadow-lg ">
-                            <div class="card-img-top">
-                                <img class="img-responsive" src="https://www.kindpng.com/picc/m/227-2275879_price-affordable-cheap-price-png-transparent-png.png" alt="BUS" width="100%" height="100%">
-                            </div>
-                            <div class="card-body p-1 text-center">
-                                    <h4 class="card-title" style="color:#080807">Affordable Price</h4>
-                            </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4"></div>
-                <!-- <div class="d-flex p-3 col-12 col-md-4 col-md-offset-1 align-items-center d-flex position-sticky p-5"> -->
-                    <!-- <a href="/newPassenger" class="btn btn-block btn-lg bg-dark text-white rounded-pill" id="Reg_for_pass">Register for Pass</a> -->
-                    <!-- <a href="#" class="rouded-pill">Fee details</a> -->
-                <!-- </div> -->
-            </div>
-            
-        </div>
-        <div class="row p-5">
-            <div class="col-md-6 col-12 p-2">
-                <a href="/newPassenger" class="btn btn-block btn-lg bg-dark text-white rounded-pill" id="Reg_for_pass">Register for Pass</a>
-            </div>
-            <div class="col-md-6 col-12 p-2">
-                <a href="/fee" class="btn btn-outline-warning btn-lg btn-block rounded-pill" id="Reg_for_pass">Fee details</a>
-            </div>
-        </div>
-    </div>
-    
-        
-    <footer class="footer align-items-center d-flex " style="padding-top: 2%;">
-        <div class="container">
-            <div class="row justify-content-center">             
-                <div class="col-6 offset-sm-1 offset-md-2 mt-5">
-                    <h5>Our Address</h5>
-                    <address>
-                      123, <br>
-                      qwerty uiop Road,<br>
-                      asdfghjki louio, xyz<br>
-                      XYZ<br>
-                    </address>
-                </div>
-                <div class="col mt-5">
-                      <h5>Contact Us</h5>
-                      <i class="fa fa-phone fa-lg"></i>: +91 123 4567 789<br>
-                      <i class="fa fa-fax fa-lg"></i>: +91 987 6547 123<br>
-                      <i class="fa fa-envelope fa-lg">:</i>
-                      <a href="mailto:xyz@gmail.com">xyz bus.com</a><br>
-                      <a class="btn btn-social-icon btn-google text-white" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
-                      <a class="btn btn-social-icon text-white" href="mailto:"><i class="fa fa-envelope-o"></i></a>
-                      
-                </div>
-           </div>
-           
-        </div>
-    </footer>
+    <ol class="carousel-indicators">
+      <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mycarousel" data-slide-to="1"></li>
+      <li data-target="#mycarousel" data-slide-to="2"></li>
+    </ol>
+    <a
+      class="carousel-control-prev"
+      href="#mycarousel"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#mycarousel"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</div>
 
+<div class="container">
+  <div class="row row-content align-items-center">
+    <div class="card-group">
+      <div class="col-12 col-sm-6 col-md-4 pb-5">
+        <div class="card shadow-lg">
+          <div class="card-img-top">
+            <img
+              class="img-responsive"
+              src="https://www.ivws.org/wp-content/uploads/2020/03/School-buses-with-CCTV-and-GPS-system.jpg"
+              alt="BUS"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="card-body p-1 text-center">
+            <h4 class="card-title" style="color: #080807" id="bus">
+              30+ Buses
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 pb-5">
+        <div class="card shadow-lg">
+          <div class="card-img-top">
+            <img
+              class="img-responsive"
+              src="https://t4.ftcdn.net/jpg/01/66/40/31/360_F_166403126_t0xbg4CbqN5t2M5P6mDWNnUEwIot8eKs.jpg"
+              alt="BUS"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="card-body p-1 text-center">
+            <h4 class="card-title" style="color: #080807">100+ Routes</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 offset-sm-3 col-md-4 offset-md-0 pb-5">
+        <div class="card shadow-lg">
+          <div class="card-img-top">
+            <img
+              class="img-responsive"
+              src="https://www.kindpng.com/picc/m/227-2275879_price-affordable-cheap-price-png-transparent-png.png"
+              alt="BUS"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="card-body p-1 text-center">
+            <h4 class="card-title" style="color: #080807">Affordable Price</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4"></div>
+      <!-- <div class="d-flex p-3 col-12 col-md-4 col-md-offset-1 align-items-center d-flex position-sticky p-5"> -->
+      <!-- <a href="/newPassenger" class="btn btn-block btn-lg bg-dark text-white rounded-pill" id="Reg_for_pass">Register for Pass</a> -->
+      <!-- <a href="#" class="rouded-pill">Fee details</a> -->
+      <!-- </div> -->
+    </div>
+  </div>
+  <div class="row p-5">
+    <div class="col-md-6 col-12 p-2">
+      <a
+        href="/newPassenger"
+        class="btn btn-block btn-lg bg-dark text-white rounded-pill"
+        id="Reg_for_pass"
+        >Register for Pass</a
+      >
+    </div>
+    <div class="col-md-6 col-12 p-2">
+      <a
+        href="/fee"
+        class="btn btn-outline-warning btn-lg btn-block rounded-pill"
+        id="Reg_for_pass"
+        >Fee details</a
+      >
+    </div>
+  </div>
+</div>
+
+<footer class="footer align-items-center d-flex" style="padding-top: 2%">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6 offset-sm-1 offset-md-2 mt-5">
+        <h5>Our Address</h5>
+        <address>
+          123, <br />
+          qwerty uiop Road,<br />
+          asdfghjki louio, xyz<br />
+          XYZ<br />
+        </address>
+      </div>
+      <div class="col mt-5">
+        <h5>Contact Us</h5>
+        <i class="fa fa-phone fa-lg"></i>: +91 123 4567 789<br />
+        <i class="fa fa-fax fa-lg"></i>: +91 987 6547 123<br />
+        <i class="fa fa-envelope fa-lg">:</i>
+        <a href="mailto:xyz@gmail.com">xyz bus.com</a><br />
+        <a
+          class="btn btn-social-icon btn-google text-white"
+          href="http://google.com/+"
+          ><i class="fa fa-google-plus"></i
+        ></a>
+        <a class="btn btn-social-icon text-white" href="mailto:"
+          ><i class="fa fa-envelope-o"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <%- include("partials/footer") %>

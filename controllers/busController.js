@@ -1,4 +1,4 @@
-const Bus=require('../models/bus')
+const Bus = require("../models/bus");
 exports.newBus_get = (req, res) => {
   res.render("newBus");
 };
