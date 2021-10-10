@@ -1,5 +1,5 @@
-const Admin=require('../models/admin')
-const passport = require("passport")
+const Admin = require("../models/admin");
+const passport = require("passport");
 
 exports.isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) return next();
@@ -23,15 +23,13 @@ exports.registerPost = (req, res) => {
   });
 };
 
-exports.loginGet=(req,res)=>{
+exports.loginGet = (req, res) => {
   res.render("login");
-}
+};
 
-exports.loginPost=(req,res)=>{
+exports.loginPost = (req, res) => {};
 
-}
-
-exports.logout=(req,res)=>{
+exports.logout = (req, res) => {
   req.logout();
   res.redirect("/admin");
-}
+};

@@ -3,23 +3,23 @@ const Boardingpt = require("../models/boardingpt");
 const Publishable_Key = process.env.Publishable_Key;
 const Secret_Key = process.env.Secret_Key;
 const stripe = require("stripe")(Secret_Key);
-const Passenger=require('../models/passenger')
+const Passenger = require("../models/passenger");
 const nodemailer = require("nodemailer");
 global.passenger = {};
 
 let mailTransporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_ID,
-      pass: process.env.PASS,
-    },
-  });
-  let mailDetails = {
-    from: process.env.EMAIL_ID,
-    to: "abc@gmail.com",
-    subject: "Bus Pass",
-    text: "Congratulations! Your seat has been reserved!!",
-  };
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_ID,
+    pass: process.env.PASS,
+  },
+});
+let mailDetails = {
+  from: process.env.EMAIL_ID,
+  to: "abc@gmail.com",
+  subject: "Bus Pass",
+  text: "Congratulations! Your seat has been reserved!!",
+};
 
 exports.home = (req, res) => {
   res.render("home");

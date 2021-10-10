@@ -1,60 +1,95 @@
 <%- include("partials/header") %>
 <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-    <div class="container">
-        <a class="navbar-brand mr-auto h5" href="/" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fa fa-bus" aria-hidden="true"></i>
-            College Bus</a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="Navbar">
-            <span class="navbar-nav ml-auto">
-                <a role="button" href="/logout" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="h5"><span class="fa fa-sign-out"></span>Logout</a>
-            </span>
-        </div>
+  <div class="container">
+    <a
+      class="navbar-brand mr-auto h5"
+      href="/"
+      style="
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      "
+      ><i class="fa fa-bus" aria-hidden="true"></i> College Bus</a
+    >
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#Navbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="Navbar">
+      <span class="navbar-nav ml-auto">
+        <a
+          role="button"
+          href="/logout"
+          style="
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+              sans-serif;
+          "
+          class="h5"
+          ><span class="fa fa-sign-out"></span>Logout</a
+        >
+      </span>
     </div>
+  </div>
 </nav>
-    <div class="text-center p-5">
-        <p class="h3 p-2">Apply Filter <i class="fa fa-filter" aria-hidden="true"></i></p>
-        <form action="/view" method="post" class="">
-            <div class="row">
-                <div class="col-6 text-center p-2">
-                    <select name="routeno" id="routeno" class="p-2 text-center rounded-pill" style="text-align-last: center;background-color: rgb(228, 227, 227);">
-                        <option value="all">ALL</option>
-                        <% bus.forEach((routeno)=>{ %>
-                            <option><%= routeno.routeno%></option>
-                        <% }) %>
-                    </select>
-                </div>
-                <div class="col-6 text-center p-2">
-                    <input type="submit" value="Apply" class="btn btn-lg rounded-pill bg-dark text-white">
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="container p-3 table-responsive shadow-lg">
-        <table class="table table-striped text-center ">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Boarding Point</th>
-                    <th>Bus No</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% passenger.forEach((pass)=>{ %>
-                    <tr>
-                        <!-- <td><%= pass.id.toUpperCase() %></td> -->
-                        <!-- <td><a href="/view/<%= pass.id %>"><%= pass.name.toUpperCase() %></a></td> -->
-                        <td><%= pass.name.toUpperCase() %></td>
-                        <td><%= pass.boardingpt %></td>
-                        <td><%= pass.routeno%></td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="text-center p-5">
-        <a href="/admin" class="btn btn-lg rounded-pill btn-primary">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+<div class="text-center p-5">
+  <p class="h3 p-2">
+    Apply Filter <i class="fa fa-filter" aria-hidden="true"></i>
+  </p>
+  <form action="/view" method="post" class="">
+    <div class="row">
+      <div class="col-6 text-center p-2">
+        <select
+          name="routeno"
+          id="routeno"
+          class="p-2 text-center rounded-pill"
+          style="text-align-last: center; background-color: rgb(228, 227, 227)"
+        >
+          <option value="all">ALL</option>
+          <% bus.forEach((routeno)=>{ %>
+          <option><%= routeno.routeno%></option>
+          <% }) %>
+        </select>
       </div>
+      <div class="col-6 text-center p-2">
+        <input
+          type="submit"
+          value="Apply"
+          class="btn btn-lg rounded-pill bg-dark text-white"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container p-3 table-responsive shadow-lg">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Boarding Point</th>
+        <th>Bus No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% passenger.forEach((pass)=>{ %>
+      <tr>
+        <!-- <td><%= pass.id.toUpperCase() %></td> -->
+        <!-- <td><a href="/view/<%= pass.id %>"><%= pass.name.toUpperCase() %></a></td> -->
+        <td><%= pass.name.toUpperCase() %></td>
+        <td><%= pass.boardingpt %></td>
+        <td><%= pass.routeno%></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div class="text-center p-5">
+  <a href="/admin" class="btn btn-lg rounded-pill btn-primary"
+    >Home <i class="fa fa-home" aria-hidden="true"></i
+  ></a>
+</div>
 <%- include("partials/footer") %>
