@@ -10,6 +10,7 @@ router.post(
   passport.authenticate("local", {
     successRedirect: "/admin",
     failureRedirect: "/login",
+    failureFlash: true
   })
 );
 router.get("/logout", auth.logout);
