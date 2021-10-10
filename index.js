@@ -1,5 +1,4 @@
-const bodyParser = require("body-parser"),
-  express = require("express"),
+const  express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
   passport = require("passport"),
@@ -8,8 +7,8 @@ require("dotenv").config();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //MONGODB ATLAS CONNECTION
 
 const connectionParams = {
