@@ -158,3 +158,9 @@ exports.payment = (req, res) => {
       res.send(err); // If some error occurs
     });
 };
+exports.getPrice = (req, res) => {
+  //console.log(req.body);
+  Boardingpt.find({boardingpt: req.body.boardingpt},{price:1})
+  .then(price => res.json(price))
+  .catch(err => res.json(err))
+}

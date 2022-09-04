@@ -90,10 +90,18 @@
       <!-- <input type="text" class="form-control"  placeholder="Boarding Point" required> -->
       <label for="boardingpt">Select the boarding point:</label>
       <select name="pass[boardingpt]" id="boardingpt" class="m-1" required>
+        <option disabled selected value> -- select an option -- </option>
         <% bt.forEach((bt)=>{ %>
         <option><%= bt.boardingpt%></option>
         <% }) %>
       </select>
+      <!-- <input list="boardingpts" name="pass[boardingpt]" id="boardingpt" required> -->
+  <!-- <datalist id="boardingpts">
+    <% bt.forEach((bt)=>{ %>
+      <option value="<%= bt.boardingpt%>">
+    <% }) %>
+   
+  </datalist> -->
     </div>
 
     <div class="form-group">
@@ -123,6 +131,8 @@
       <input
         type="submit"
         class="form-control btn btn-lg rounded-pill bg-dark text-white"
+        value="Pay"
+        id="submit-pay"
       />
     </div>
   </form>
@@ -137,4 +147,26 @@
   bt = document.getElementById("boardingpt");
   //bt.style.color="red"
   //alert("Hello")
+  bt.addEventListener("change",()=>{
+    //console.log("Changed")
+    document.getElementById('submit-pay').disabled = true;
+    let boardingpt=bt.value;
+    //console.log(boardingpt)
+    fetch('/getPrice',{
+      method:'post',
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body:JSON.stringify({boardingpt})
+    })
+    .then(response=>response.json())
+    .then(data=>{
+      //console.log(data);
+      document.getElementById('submit-pay').value="Pay ₹"+data[0].price
+      document.getElementById('submit-pay').disabled = false
+    })
+    .catch(error=>{
+      console.log(error)
+    })
+  })
 </script>

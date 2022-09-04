@@ -13,4 +13,6 @@ router.post("/checkout", passengerController.checkout);
 router.get("/checkout", passengerController.checkout_get);
 
 router.post("/payment", passengerController.payment);
+
+router.post("/getPrice",passengerController.getPrice);
 module.exports = router;
