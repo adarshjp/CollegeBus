@@ -160,7 +160,28 @@ exports.payment = (req, res) => {
 };
 exports.getPrice = (req, res) => {
   //console.log(req.body);
-  Boardingpt.find({boardingpt: req.body.boardingpt},{price:1})
-  .then(price => res.json(price))
-  .catch(err => res.json(err))
+  Boardingpt.find({ boardingpt: req.body.boardingpt }, { price: 1 })
+    .then(price => res.json(price))
+    .catch(err => res.json(err))
+}
+exports.seats = async (req, res) => {
+  let routeno = await findRouteByBoardingpt(req.body.boardingpt)
+  console.log('Fetched from DB:',routeno)
+  let totalseats = await findSeatsByRoute(routeno[0].routeno);
+  console.log('Fetched from DB:',totalseats[0])
+  res.json(totalseats[0])
+}
+function findRouteByBoardingpt(boardingpt) {
+  return new Promise((resolve, reject) => {
+    Boardingpt.find({ boardingpt: boardingpt }, { routeno: 1,_id:0 })
+      .then(routeno => resolve(routeno))
+      .catch(err => reject(err))
+  })
+}
+function findSeatsByRoute(routeno) {
+  return new Promise((resolve, reject) => {
+    Bus.find({routeno:routeno},{totalseats:1,_id:0})
+    .then(seats => resolve(seats))
+    .catch(err => reject(err))
+  })
 }

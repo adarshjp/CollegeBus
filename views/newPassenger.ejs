@@ -2,171 +2,174 @@
 
 <style></style>
 <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
-  <div class="container">
-    <a
-      class="navbar-brand mr-auto h5"
-      href="/"
-      style="
-        color: black;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      "
-      ><i class="fa fa-bus" aria-hidden="true"></i> College Bus</a
-    >
-    <button
-      class="navbar-toggler custom-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#Navbar"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="Navbar">
-      <span class="navbar-nav ml-auto">
+    <div class="container">
         <a
-          role="button"
-          href="/login"
-          style="
-            color: black;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-              sans-serif;
-          "
-          class="h5"
-          ><span class="fa fa-sign-out"></span>Login</a
+            class="navbar-brand mr-auto h5"
+            href="/"
+            style="
+                color: black;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+            "
+            ><i class="fa fa-bus" aria-hidden="true"></i> College Bus</a
         >
-      </span>
+        <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#Navbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Navbar">
+            <span class="navbar-nav ml-auto">
+                <a
+                    role="button"
+                    href="/login"
+                    style="
+                        color: black;
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow',
+                            Arial, sans-serif;
+                    "
+                    class="h5"
+                    ><span class="fa fa-sign-out"></span>Login</a
+                >
+            </span>
+        </div>
     </div>
-  </div>
 </nav>
 <p
-  class="h1 pt-5 text-dark font-weight-bold text-center"
-  style="font-family: 'Courier New', Courier, monospace"
+    class="h1 pt-5 text-dark font-weight-bold text-center"
+    style="font-family: 'Courier New', Courier, monospace"
 >
-  <marquee behavior="" direction="">BUS PASS REGISTRATION PORTAL</marquee>
+    <marquee behavior="" direction="">BUS PASS REGISTRATION PORTAL</marquee>
 </p>
 <div style="width: 80%; margin: auto" class="">
-  <form
-    style="background-color: #acffb0"
-    class="p-5 shadow-lg"
-    method="POST"
-    action="/checkout"
-  >
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Full Name"
-        name="pass[name]"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="USN/ID"
-        name="pass[id]"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="email"
-        class="form-control"
-        placeholder="Email"
-        name="pass[email]"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Phone Number"
-        name="pass[phno]"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <!-- <input type="text" class="form-control"  placeholder="Boarding Point" required> -->
-      <label for="boardingpt">Select the boarding point:</label>
-      <select name="pass[boardingpt]" id="boardingpt" class="m-1" required>
-        <option disabled selected value> -- select an option -- </option>
-        <% bt.forEach((bt)=>{ %>
-        <option><%= bt.boardingpt%></option>
-        <% }) %>
-      </select>
-      <!-- <input list="boardingpts" name="pass[boardingpt]" id="boardingpt" required> -->
-  <!-- <datalist id="boardingpts">
+    <form style="background-color: #acffb0" class="p-5 shadow-lg">
+        <div class="form-group">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Full Name"
+                name="pass[name]"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="USN/ID"
+                name="pass[id]"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                name="pass[email]"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Phone Number"
+                name="pass[phno]"
+                required
+            />
+        </div>
+        <div class="form-group">
+            <!-- <input type="text" class="form-control"  placeholder="Boarding Point" required> -->
+            <label for="boardingpt">Select the boarding point:</label>
+            <select
+                name="pass[boardingpt]"
+                id="boardingpt"
+                class="m-1 form-control"
+                required
+            >
+                <option disabled selected value>-- select an option --</option>
+                <% bt.forEach((bt)=>{ %>
+                <option><%= bt.boardingpt%></option>
+                <% }) %>
+            </select>
+            <!-- <input list="boardingpts" name="pass[boardingpt]" id="boardingpt" required> -->
+            <!-- <datalist id="boardingpts">
     <% bt.forEach((bt)=>{ %>
       <option value="<%= bt.boardingpt%>">
     <% }) %>
    
   </datalist> -->
-    </div>
+        </div>
 
-    <div class="form-group">
-      <!-- <input type="text" class="form-control"  placeholder="Route Number" required> -->
-      <label for="routeno">Select the route number:</label>
-      <select name="pass[routeno]" id="routeno" class="m-1">
-        <option value="null">Don't Know</option>
-        <% routeno.forEach((routeno)=>{ %>
-        <option><%= routeno.routeno%></option>
-        <% }) %>
-      </select>
-    </div>
-    <div class="form-group">
-      <p>Select any One:</p>
-      <label for="Student" class="pr-2"> Student</label>
-      <input
-        type="radio"
-        id="Student"
-        name="pass[type]"
-        value="Student"
-        required
-      />
-      <label for="Staff" class="pr-2 pl-2">Staff</label>
-      <input type="radio" id="Staff" name="pass[type]" value="Staff" />
-    </div>
-    <div class="form-group">
-      <input
-        type="submit"
-        class="form-control btn btn-lg rounded-pill bg-dark text-white"
-        value="Pay"
-        id="submit-pay"
-      />
-    </div>
-  </form>
+        <!-- <div class="form-group">
+            <label for="routeno">Select the route number:</label>
+            <select name="pass[routeno]" id="routeno" class="m-1 form-control">
+                <option value="null">Don't Know</option>
+                <% routeno.forEach((routeno)=>{ %>
+                <option><%= routeno.routeno%></option>
+                <% }) %>
+            </select>
+        </div> -->
+        <div class="form-group">
+            <p>Select any One:</p>
+            <label for="Student" class="pr-2"> Student</label>
+            <input
+                type="radio"
+                id="Student"
+                name="pass[type]"
+                value="Student"
+                class=""
+                required
+                checked
+            />
+            <label for="Staff" class="pr-2 pl-2">Staff</label>
+            <input
+                type="radio"
+                id="Staff"
+                name="pass[type]"
+                value="Staff"
+                class=""
+            />
+        </div>
+        <div class="form-group">
+            <input
+                type="button"
+                class="form-control btn btn-lg rounded-pill bg-dark text-white"
+                value="Pay"
+                id="submit-pay"
+                onclick="verifyDetails()"
+            />
+        </div>
+    </form>
 </div>
 <div class="text-center p-5">
-  <a href="/" class="btn btn-lg rounded-pill btn-primary"
-    >Home <i class="fa fa-home" aria-hidden="true"></i
-  ></a>
+    <a href="/" class="btn btn-lg rounded-pill btn-primary"
+        >Home <i class="fa fa-home" aria-hidden="true"></i
+    ></a>
 </div>
 <%- include("partials/footer") %>
+<script type="text/javascript" src="./passenger.js"></script>
 <script>
-  bt = document.getElementById("boardingpt");
-  //bt.style.color="red"
-  //alert("Hello")
-  bt.addEventListener("change",()=>{
-    //console.log("Changed")
-    document.getElementById('submit-pay').disabled = true;
-    let boardingpt=bt.value;
-    //console.log(boardingpt)
-    fetch('/getPrice',{
-      method:'post',
-      headers:{
-        "Content-Type": "application/json"
-      },
-      body:JSON.stringify({boardingpt})
-    })
-    .then(response=>response.json())
-    .then(data=>{
-      //console.log(data);
-      document.getElementById('submit-pay').value="Pay ₹"+data[0].price
-      document.getElementById('submit-pay').disabled = false
-    })
-    .catch(error=>{
-      console.log(error)
-    })
-  })
+    bt = document.getElementById("boardingpt");
+    bt.addEventListener("change", async () => {
+        document.getElementById("submit-pay").disabled = true;
+        let boardingpt = bt.value;
+        let price=await  getPrice(boardingpt)
+        let seats=await getSeats(boardingpt)
+        if(seats.totalseats<1){
+            swal({
+                title: "Oh no!",
+                text:"Seat Full!",
+                icon:"warning"
+            })
+            document.getElementById("submit-pay").value="Seat Full!"
+        }else{
+            document.getElementById("submit-pay").disabled = false;
+            document.getElementById("submit-pay").value='Pay ₹'+price[0].price
+        }
+    });
 </script>
