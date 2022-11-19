@@ -12,7 +12,7 @@ router.post("/checkout", passengerController.checkout);
 
 router.get("/checkout", passengerController.checkout_get);
 
-router.post("/payment", passengerController.payment);
+// router.post("/payment", passengerController.payment);
 
 router.post("/getPrice",passengerController.getPrice);
 router.post("/seats", passengerController.seats);

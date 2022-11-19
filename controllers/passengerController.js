@@ -95,69 +95,69 @@ exports.checkout_get = (req, res) => {
   res.render("checkout", { passenger: global.passenger, key: Publishable_Key });
 };
 
-exports.payment = (req, res) => {
-  console.log("Payment route");
-  //var ticketprice=passenger.price
-  var passenger = req.body.pass;
-  console.log(passenger);
-  stripe.customers
-    .create({
-      //email: req.body.stripeEmail,
-      source: req.body.stripeToken,
-      name: req.body.pass.name,
-      //address:passenger.boardingpt
-    })
-    .then((customer) => {
-      console.log("Customer");
-      return stripe.charges.create({
-        amount: req.body.pass.price * 100, // Charing Rs 25
-        description: "Bus pass",
-        currency: "INR",
-        customer: customer.id,
-      });
-    })
-    .then((charge) => {
-      console.log("Sucess");
-      Passenger.create(passenger, (err, newPass) => {
-        if (err) console.log(err);
-        else {
-          console.log(newPass);
-          Bus.find(
-            { routeno: req.body.pass.routeno },
-            { totalseats: 1, _id: 0 },
-            (err, total_seats) => {
-              console.log(req.body.pass.routeno);
-              console.log(total_seats);
-              var seat = total_seats[0].totalseats;
-              seat = seat - 1;
-              console.log(seat);
+// exports.payment = (req, res) => {
+//   console.log("Payment route");
+//   //var ticketprice=passenger.price
+//   var passenger = req.body.pass;
+//   console.log(passenger);
+//   stripe.customers
+//     .create({
+//       //email: req.body.stripeEmail,
+//       source: req.body.stripeToken,
+//       name: req.body.pass.name,
+//       //address:passenger.boardingpt
+//     })
+//     .then((customer) => {
+//       console.log("Customer");
+//       return stripe.charges.create({
+//         amount: req.body.pass.price * 100, // Charing Rs 25
+//         description: "Bus pass",
+//         currency: "INR",
+//         customer: customer.id,
+//       });
+//     })
+//     .then((charge) => {
+//       console.log("Sucess");
+//       Passenger.create(passenger, (err, newPass) => {
+//         if (err) console.log(err);
+//         else {
+//           console.log(newPass);
+//           Bus.find(
+//             { routeno: req.body.pass.routeno },
+//             { totalseats: 1, _id: 0 },
+//             (err, total_seats) => {
+//               console.log(req.body.pass.routeno);
+//               console.log(total_seats);
+//               var seat = total_seats[0].totalseats;
+//               seat = seat - 1;
+//               console.log(seat);
 
-              Bus.findOneAndUpdate(
-                { routeno: newPass.routeno },
-                { totalseats: seat },
-                (err, updatedBus) => {
-                  console.log(updatedBus);
-                }
-              );
-              console.log(newPass);
-              mailDetails.to = req.body.pass.email;
-              mailTransporter.sendMail(mailDetails, function (err, data) {
-                if (err) {
-                  console.log("Error Occurs" + err);
-                } else {
-                  console.log("Email sent successfully");
-                }
-              });
-              res.render("sucess");
-            }
-          );
-        }
-      });
-    })
-    .catch((err) => {
-      res.send(err); // If some error occurs
-    });
-};
+//               Bus.findOneAndUpdate(
+//                 { routeno: newPass.routeno },
+//                 { totalseats: seat },
+//                 (err, updatedBus) => {
+//                   console.log(updatedBus);
+//                 }
+//               );
+//               console.log(newPass);
+//               mailDetails.to = req.body.pass.email;
+//               mailTransporter.sendMail(mailDetails, function (err, data) {
+//                 if (err) {
+//                   console.log("Error Occurs" + err);
+//                 } else {
+//                   console.log("Email sent successfully");
+//                 }
+//               });
+//               res.render("sucess");
+//             }
+//           );
+//         }
+//       });
+//     })
+//     .catch((err) => {
+//       res.send(err); // If some error occurs
+//     });
+// };
 exports.getPrice = (req, res) => {
   //console.log(req.body);
   Boardingpt.find({ boardingpt: req.body.boardingpt }, { price: 1 })
@@ -182,8 +182,9 @@ exports.newPassengerPost = async (req, res) => {
   console.log('New Passenger created:', newPassenger)
   await decreaseSeat(newPassenger.routeno)
   console.log('Decreased totalseats by 1')
-  res.send({"msg":"success"})
-  //await sendMail(newPassenger)
+  await sendMail(newPassenger.email)
+  console.log('Sent mail to', newPassenger.email)
+  res.send({ "msg": "success" })
 }
 exports.success = async (req, res) => {
   res.render('sucess');
@@ -212,9 +213,17 @@ function createNewPassenger(passenger) {
 }
 
 function decreaseSeat(routeno) {
-  return new Promise((resolve, reject) =>{
-    Bus.updateOne({ routeno: routeno},{$inc:{totalseats:-1}})
-    .then((newBus) =>resolve(newBus))
-    .catch((err) =>reject(err))
+  return new Promise((resolve, reject) => {
+    Bus.updateOne({ routeno: routeno }, { $inc: { totalseats: -1 } })
+      .then((newBus) => resolve(newBus))
+      .catch((err) => reject(err))
+  })
+}
+function sendMail(email) {
+  return new Promise((resolve, reject) => {
+    mailDetails.to = email;
+    mailTransporter.sendMail(mailDetails)
+    .then(() => resolve())
+    .catch((err) => reject(err))
   })
 }
