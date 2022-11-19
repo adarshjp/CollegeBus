@@ -13,6 +13,7 @@ const BusSchema = new mongoose.Schema({
   totalseats: {
     type: Number,
     required: true,
+    min:0
   },
 });
 module.exports = new mongoose.model("Bus", BusSchema);
