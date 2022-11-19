@@ -166,22 +166,55 @@ exports.getPrice = (req, res) => {
 }
 exports.seats = async (req, res) => {
   let routeno = await findRouteByBoardingpt(req.body.boardingpt)
-  console.log('Fetched from DB:',routeno)
+  console.log('Fetched from DB:', routeno)
   let totalseats = await findSeatsByRoute(routeno[0].routeno);
-  console.log('Fetched from DB:',totalseats[0])
-  res.json(totalseats[0])
+  console.log('Fetched from DB:', totalseats[0])
+  res.json({
+    totalseats: totalseats[0].totalseats,
+    routeno: routeno[0].routeno
+  })
+}
+exports.newPassengerPost = async (req, res) => {
+  //create a new passenger
+  //Decrease the seat by 1
+  console.log('Data from CLIENT:', req.body)
+  let newPassenger = await createNewPassenger(req.body.passenger)
+  console.log('New Passenger created:', newPassenger)
+  await decreaseSeat(newPassenger.routeno)
+  console.log('Decreased totalseats by 1')
+  res.send({"msg":"success"})
+  //await sendMail(newPassenger)
+}
+exports.success = async (req, res) => {
+  res.render('sucess');
 }
 function findRouteByBoardingpt(boardingpt) {
   return new Promise((resolve, reject) => {
-    Boardingpt.find({ boardingpt: boardingpt }, { routeno: 1,_id:0 })
+    Boardingpt.find({ boardingpt: boardingpt }, { routeno: 1, _id: 0 })
       .then(routeno => resolve(routeno))
       .catch(err => reject(err))
   })
 }
 function findSeatsByRoute(routeno) {
   return new Promise((resolve, reject) => {
-    Bus.find({routeno:routeno},{totalseats:1,_id:0})
-    .then(seats => resolve(seats))
-    .catch(err => reject(err))
+    Bus.find({ routeno: routeno }, { totalseats: 1, _id: 0 })
+      .then(seats => resolve(seats))
+      .catch(err => reject(err))
+  })
+}
+
+function createNewPassenger(passenger) {
+  return new Promise((resolve, reject) => {
+    Passenger.create(passenger)
+      .then((passenger) => resolve(passenger))
+      .catch((err) => reject(err))
+  })
+}
+
+function decreaseSeat(routeno) {
+  return new Promise((resolve, reject) =>{
+    Bus.updateOne({ routeno: routeno},{$inc:{totalseats:-1}})
+    .then((newBus) =>resolve(newBus))
+    .catch((err) =>reject(err))
   })
 }

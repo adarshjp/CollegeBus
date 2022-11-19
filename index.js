@@ -1,4 +1,4 @@
-const  express = require("express"),
+const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
   passport = require("passport"),
@@ -27,11 +27,11 @@ mongoose
   });
 //MONGODB CONNECTION COMPLETED
 
-const flash=require('connect-flash')
-const cookieParser=require('cookie-parser')
-const session=require('express-session')
+const flash = require('connect-flash')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
 app.use(cookieParser('keyboard cat'))
-app.use(session({cookie:{maxAge:60000}}))
+app.use(session({ cookie: { maxAge: 60000 } }))
 app.use(flash())
 
 const Admin = require("./models/admin");
@@ -49,7 +49,7 @@ passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
-  res.locals.message=req.flash()
+  res.locals.message = req.flash()
   next();
 });
 
@@ -58,12 +58,13 @@ const busRouter = require("./routes/bus");
 const boardingpointRouter = require("./routes/boardingpoint");
 const adminRoutes = require("./routes/admin");
 const authRoutes = require("./routes/auth");
+const paymentRoutes = require("./routes/payments")
 app.use(passengerRouter);
 app.use(busRouter);
 app.use(boardingpointRouter);
 app.use(adminRoutes);
 app.use(authRoutes);
-
+app.use(paymentRoutes);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server Started!!");
