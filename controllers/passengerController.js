@@ -46,7 +46,7 @@ exports.newPassenger = (req, res) => {
         if (err) console.log(err);
         else {
           //console.log(bt)
-          res.render("newPassenger", { routeno: routeno, bt: bt });
+          res.render("newPassenger", { routeno: routeno, bt: bt,key:process.env.RKEY });
         }
       });
     }
