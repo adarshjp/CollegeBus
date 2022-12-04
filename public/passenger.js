@@ -99,11 +99,12 @@ function getSeats(boardingpt) {
 async function flow() {
     let orderId = await getOrderId();
     let input=getInputValue();
+    console.log(key)
     var options = {
-        key: "rzp_test_UKDlaMQmjNXpas", // Enter the Key ID generated from the Dashboard
+        key: key, // Enter the Key ID generated from the Dashboard
         amount: price[0].price*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency: "INR",
-        name: "Nitte Education Trust",
+        name: "XYZ Education Trust",
         description: "Bus pass fee payment",
         image: "https://yt3.ggpht.com/ytc/AMLnZu-3U3Uuy2liuzEkuUvszFTwyh8k3Es3x7Ei3JBXaA=s900-c-k-c0x00ffffff-no-rj",
         order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
