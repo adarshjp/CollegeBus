@@ -184,7 +184,7 @@ exports.newPassengerPost = async (req, res) => {
   console.log('Decreased totalseats by 1')
   await sendMail(newPassenger.email)
   console.log('Sent mail to', newPassenger.email)
-  res.send({ "msg": "success" })
+  res.send({ "msg": "success", "data":req.body })
 }
 exports.success = async (req, res) => {
   res.render('sucess');
