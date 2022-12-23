@@ -141,7 +141,6 @@
                 class="form-control btn btn-lg rounded-pill bg-dark text-white"
                 value="Pay"
                 id="rzp-button1"
-                onclick="verifyDetails()"
             />
         </div>
     </form>
@@ -152,10 +151,11 @@
     ></a>
 </div>
 <%- include("partials/footer") %>
+
 <script>
     let key= '<%- key %>';
 </script>
-<script type="text/javascript" src="./passenger.js">
+<script type="module" src="./passenger.js">
 </script>
 <!-- <script type="text/javascript" src="./payments.js"></script> -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>

@@ -3,14 +3,18 @@ const PassengerSchema = new mongoose.Schema({
   name: String,
   id: String,
   email: String,
-  phone: Number,
+  phno: Number,
   boardingpt: String,
   routeno: String,
   type: String,
-  status: String,
+  status: {
+    type: String,
+    enum:['Active','Inactive','Expired'],
+    default:'Active'
+  },
   paymentDetails:{
     orderId: String,
-    paymentid: String,
+    paymentId: String,
     status: String,
     time:Date,
     amt: String,
